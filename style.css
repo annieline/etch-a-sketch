@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&family=Roboto:ital,wght@0,400;0,700;1,100&display=swap');
+
+*{
+    font-family: 'Lexend';
+}
+
+body {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gridslider{
+    display: flex;
+    align-items: center;
+}
+
+#grid{
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 500px;
+    max-width: 50vh;
+    max-height: 50vh;
+    outline: 2px solid black;
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 0px;
+    width: 50vh;
+}
+
+.pixel{
+    flex-grow: 1;
+}
