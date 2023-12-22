@@ -3,6 +3,7 @@ var colorWheel = document.getElementById("color-wheel");
 var output = document.getElementById("value");
 var grid = document.getElementById("grid");
 const btn = document.querySelectorAll(".btn");
+let randomColor = 'Disabled';
 
 output.innerHTML = slider.value;
 makeGrid(slider.value);
@@ -14,6 +15,11 @@ slider.oninput = function() {
     // call to make a new grid
     makeGrid();
   } 
+
+// when users change the color wheel it will disable the randomColor
+colorWheel.oninput = function () {
+  randomColor = 'Disabled';
+}
 
 // Make a function to create the divs inside grid based on slider.value
 function makeGrid(){
@@ -29,7 +35,16 @@ function makeGrid(){
       row.appendChild(col);
 
       col.addEventListener("mouseover", () => {
-        col.style.backgroundColor = colorWheel.value;
+        // if randomColor was pressed
+        if (randomColor == 'enabled')
+        {
+          const randPixel = Math.floor(Math.random()*16777215).toString(16);
+          col.style.backgroundColor = "#"+randPixel;
+        }
+        // otherwise use whatever is on the color-wheel
+        else {
+          col.style.backgroundColor = colorWheel.value;
+        }
       }
       );
     }
@@ -44,21 +59,17 @@ function clearDiv(){
 }
 
 function buttonPressed(){
+  // enables the var randomColor to give pixels a random colour in event listener
   if (this.id == 'random'){
-
+    randomColor = 'enabled';
   }
+  // 'Clears' the canvas if pressed, sets background colour for each pixel to white.
   else if (this.id == 'clear'){
-
+    const pixel = document.querySelectorAll(".col");
+    pixel.forEach(pixel => pixel.style.backgroundColor='white');
   }
   else{
     return;
   }
 }
-// Make an event listener that will see what the mouse is hovering on and change the pixel colour based on what button is pressed.
-
-// Colour Button: prompt user to pick a colour using the colour wheel
-
-// Random Button: While this button is active colour is changed to a random colour everytime it hovers to a new pixel.
-
-// Clear Button: Canvas will clear all colours -> set all pixels back to white.
 
