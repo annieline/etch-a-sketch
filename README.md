@@ -13,4 +13,3 @@ I learned more about DOM manipulation, flexbox and implementing different CSS fe
 For features I can implement in the future:
 Gradation button: everytime a user hovers over the cell it gets 10% darker.
 Eraser button: erases the coloured pixel on hover.
-.........
