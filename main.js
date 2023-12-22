@@ -5,7 +5,6 @@ var grid = document.getElementById("grid");
 const btn = document.querySelectorAll(".btn");
 
 output.innerHTML = slider.value;
-let pixelColor = colorWheel.value;
 makeGrid(slider.value);
 btn.forEach(btn => btn.addEventListener('click', buttonPressed))
 
@@ -30,7 +29,7 @@ function makeGrid(){
       row.appendChild(col);
 
       col.addEventListener("mouseover", () => {
-        col.style.backgroundColor = pixelColor;
+        col.style.backgroundColor = colorWheel.value;
       }
       );
     }
@@ -45,10 +44,7 @@ function clearDiv(){
 }
 
 function buttonPressed(){
-  if (this.id == 'color'){
-
-  }
-  else if (this.id == 'random' ){
+  if (this.id == 'random'){
 
   }
   else if (this.id == 'clear'){
