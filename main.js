@@ -64,12 +64,9 @@ function buttonPressed(){
     randomColor = 'enabled';
   }
   // 'Clears' the canvas if pressed, sets background colour for each pixel to white.
-  else if (this.id == 'clear'){
+  if (this.id == 'clear'){
     const pixel = document.querySelectorAll(".col");
     pixel.forEach(pixel => pixel.style.backgroundColor='white');
-  }
-  else{
-    return;
   }
 }
 
