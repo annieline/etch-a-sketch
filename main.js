@@ -3,7 +3,7 @@ var colorWheel = document.getElementById("color-wheel");
 var output = document.getElementById("value");
 var grid = document.getElementById("grid");
 const btn = document.querySelectorAll(".btn");
-let randomColor = 'Disabled';
+let randomColor = false;
 
 output.innerHTML = slider.value;
 makeGrid(slider.value);
@@ -18,7 +18,7 @@ slider.oninput = function() {
 
 // when users change the color wheel it will disable the randomColor.
 colorWheel.onclick = function () {
-  randomColor = 'Disabled';
+  randomColor = false;
 }
 
 // Make a function to create the divs inside grid based on slider.value.
@@ -36,7 +36,7 @@ function makeGrid(){
 
       col.addEventListener("mouseover", () => {
         // if randomColor was pressed
-        if (randomColor == 'enabled')
+        if (randomColor == true)
         {
           const randPixel = Math.floor(Math.random()*16777215).toString(16);
           col.style.backgroundColor = "#"+ randPixel;
@@ -61,7 +61,7 @@ function clearDiv(){
 function buttonPressed(){
   // enables the var randomColor to give pixels a random colour in event listener.
   if (this.id == 'random'){
-    randomColor = 'enabled';
+    randomColor = true;
   }
   // 'Clears' the canvas if pressed, sets background colour for each pixel to white.
   if (this.id == 'clear'){
