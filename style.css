@@ -18,6 +18,7 @@ body {
 
 #grid{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     height: 500px;
     width: 500px;
@@ -26,15 +27,25 @@ body {
     outline: 2px solid black;
 }
 
+.row{
+    display: flex;
+    flex-grow: 1;
+}
+
+.col{
+    flex: 1;
+    outline: 1px solid lightblue;
+    aspect-ratio: 1/1;
+}
+
 .btns{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 10px 0px;
     width: 50vh;
 }
 
-.pixel{
-    flex-grow: 1;
-}
+
+

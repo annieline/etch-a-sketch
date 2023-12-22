@@ -6,6 +6,8 @@
     <title>Etch-a-Sketch!</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' href='style.css'/>
+    <link rel="shortcut icon" href="">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <div class="title"><h1>Etch-a-sketch!</h1></div>
@@ -18,10 +20,12 @@
     </div>
     <div id="grid"></div>
     <div class="btns">
-        <button class="button" id="colour">colour</button>
-        <button class="button" id="random">random</button>
-        <button class="button" id="clear">clear</button>
+        <div>
+        <label for ="color-wheel">color</label>
+        <input type= "color" id="color-wheel" name="color-wheel" value='#000000'>
+        </div>
+        <button class="btn" id="random">random</button>
+        <button class="btn" id="clear">clear</button>
     </div>
 </body>
-<script src = "main.js"></script>
 </html>
