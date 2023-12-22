@@ -9,19 +9,19 @@ output.innerHTML = slider.value;
 makeGrid(slider.value);
 btn.forEach(btn => btn.addEventListener('click', buttonPressed))
 
-// The slider determines grid size
+// The slider updates the current text value for the user and calls makeGrid() to update the grid.
 slider.oninput = function() {
     output.innerHTML = this.value;
     // call to make a new grid
     makeGrid();
   } 
 
-// when users change the color wheel it will disable the randomColor
-colorWheel.oninput = function () {
+// when users change the color wheel it will disable the randomColor.
+colorWheel.onclick = function () {
   randomColor = 'Disabled';
 }
 
-// Make a function to create the divs inside grid based on slider.value
+// Make a function to create the divs inside grid based on slider.value.
 function makeGrid(){
   clearDiv();
   for (let i = 0; i < slider.value; i++){
@@ -39,9 +39,9 @@ function makeGrid(){
         if (randomColor == 'enabled')
         {
           const randPixel = Math.floor(Math.random()*16777215).toString(16);
-          col.style.backgroundColor = "#"+randPixel;
+          col.style.backgroundColor = "#"+ randPixel;
         }
-        // otherwise use whatever is on the color-wheel
+        // otherwise use whatever is on the color-wheel.
         else {
           col.style.backgroundColor = colorWheel.value;
         }
@@ -51,7 +51,7 @@ function makeGrid(){
   }
 }
 
-// Function to clear divs everytime user adjusts the slider
+// Function to clear divs everytime user adjusts the slider.
 function clearDiv(){
     while (grid.lastChild){
       grid.removeChild(grid.lastChild);
@@ -59,7 +59,7 @@ function clearDiv(){
 }
 
 function buttonPressed(){
-  // enables the var randomColor to give pixels a random colour in event listener
+  // enables the var randomColor to give pixels a random colour in event listener.
   if (this.id == 'random'){
     randomColor = 'enabled';
   }
