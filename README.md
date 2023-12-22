@@ -1,9 +1,9 @@
 # etch-a-sketch
 etch-a-sketch is a simple app that mimics the classic childhood toy using HTML/CSS/Javascript.
 
-The main functionality of this app is to change the colour of the grid cells on mouse hover. I implemented some features that will help the user experience.
+The main functionality of this app is to change the colour of the grid cells on mouse hover. I implemented some features that will help the user experience such as:
 
-*Grid size slider: user can choose a new dimensions for their grid (keeping the container intact) using a slider.
+Grid size slider: user can choose a new dimensions for their grid (keeping the container intact) using a slider.
 *Color picker: user can pick a new color from the color picker to use in their drawing.
 *Random button: a random pop of fun! 
 *Clear button: clears the canvas for the user to reset their drawing on the same canvas.
